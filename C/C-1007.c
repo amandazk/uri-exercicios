@@ -6,11 +6,11 @@
  
 int main() {
  
-    /**
-     * Escreva a sua solução aqui
-     * Code your solution here
-     * Escriba su solución aquí
-     */
- 
+    int A, B, C, D, diferenca;
+    scanf("%d %d %d %d\n", &A, &B, &C, &D);
+    
+    diferenca = ((A * B) - (C * D));
+    printf("DIFERENCA = %d\n", diferenca);
+
     return 0;
 }
