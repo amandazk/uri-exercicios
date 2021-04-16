@@ -116,5 +116,7 @@ int main(void) {
     }
     l = preenchePilha(l);
   }
-    printf("\n%d\n",count);
+    printf("%d\n",count);
+    
+    return 0;
 }
