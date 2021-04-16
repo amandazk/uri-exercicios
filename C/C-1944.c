@@ -138,13 +138,13 @@ int main(void) {
     l = push(l, l3);
     l = push(l, l4);
     qtd = qtd-1;
-    if(verificaGanhador(l)==1){
+    if(verificaGanhador(l)==1){ // número de vitórias
       count +=1;
     }
     l = preenchePilha(l);
   }
   printf("\n numero de vitorias: %d",count);
   printf("\n");
-  imprimePilha(l);
+  imprimePilha(l); // verificando situação da pilha
   printf("\n");
 }
