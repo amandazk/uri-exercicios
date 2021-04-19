@@ -1,33 +1,42 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int somaImpares();
-
 int main() {
 
-    int x, y, i, s=0, t;
-    scanf("%d %d", &x, &y);
-
-    somaImpares(x,y);
-    return 0;
+  int x, y;
+  scanf("%d %d", &x, &y);
+  somaImpares(x,y,0);
+  return 0;
 }
+int somaImpares(int x, int y,int total) {
 
-int somaImpares(int x, int y) {
+  int a, b = 0;
+  printf("\nx: %d",x);
+  printf("\ny: %d",y);
+  // printf("\ntotal: %d",total);
 
-    int t,s;
-
-    if(x > y)
-    {
-      t = x;
-      x = y;
-      y = t;
-    }
-    if(x < y) {
-        x++;
-    }
-    if(x % 2 != 0){
-        s += x;
-    }
-    printf("%d\n",s);
+  if(x==y){
+    printf("\ntotal: %d",total);
     return 0;
-    
+  }
+  
+  else if(y > x)
+  {
+    a = x;
+    x = y;
+    y = a;
+  }
+  if(y % 2 != 0){
+    b += y;
+    // printf("\ntotal: %d",total);
+    y++;
+    somaImpares(x, y,b);
+  }
+  else if(y % 2 == 0){
+    y++;
+    somaImpares(x, y,total);
+  }
+  // printf("\ntotal: %d",total);
+  return total;
 }
