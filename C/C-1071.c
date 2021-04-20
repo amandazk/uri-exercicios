@@ -12,8 +12,8 @@ int main() {
 int somaImpares(int x, int y,int total) {
 
   int a, b = 0;
-  printf("\nx: %d",x);
-  printf("\ny: %d",y);
+  // printf("\nx: %d",x);
+  // printf("\ny: %d",y);
   // printf("\ntotal: %d",total);
 
   if(x==y){
@@ -27,7 +27,7 @@ int somaImpares(int x, int y,int total) {
     x = y;
     y = a;
   }
-  if(y % 2 != 0){
+  if(y % 2 != 0 || y % 2 == -1) {
     b += y;
     // printf("\ntotal: %d",total);
     y++;
