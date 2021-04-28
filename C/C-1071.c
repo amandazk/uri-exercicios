@@ -1,37 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int somaImpares();
+int somaImpares(int i,  int parada);
 int main() {
 
   int x, y;
   scanf("%d %d", &x, &y);
-  somaImpares(x , y, 0);
+
+  if (y < x) {
+    int a = y; 
+    y = x;
+    x = a;
+  }
+
+  int soma = somaImpares(x + 1, y);
+  printf("%d\n", soma);
+
   return 0;
+
 }
-int somaImpares(int x, int y,int total) {
 
-  int a, b = 0;
+int somaImpares(int i, int parada) {
 
-  if(x==y){
-    printf("%d\n",total);
-    return 0;
-  }
-  else if(y > x)
-  {
-    a = x; // não adianta colocar x + 1
-    x = y;
-    y = a;
+  if (i < parada) {
+    
+    if (i % 2 == 1 || i % 2 == -1){
+      return i + somaImpares(i + 1, parada);
+    }
+    else {
+      return somaImpares(i + 1, parada);
+    }
   }
 
-  if(y % 2 != 0 || y % 2 == -1) {
-    b += y;
-    y++;
-    somaImpares(x, y, b);
-  }
-  else if(y % 2 == 0){
-    y++;
-    somaImpares(x, y,total);
-  }
-  return total;
+  return 0;
 }
