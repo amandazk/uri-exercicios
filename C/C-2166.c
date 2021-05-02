@@ -1,15 +1,23 @@
 #include <stdio.h>
 
+double raiz(int n)
+{
+    if(n == 0){
+        return 0;
+    } else {
+        return 1/(2 + raiz(n-1));
+    }
+
+}
+
 int main()
 {
-    double n, ans = 0.0;
-    scanf("%lf", &n);
-    while(n--)
-    {
-        ans+=2.0;
-        ans = 1.0/ans;
-    }
-    ans += 1.0;
-    printf("%.10lf\n", ans);
+    int n;
+    scanf("%d", &n);
+
+    double r = raiz(n);
+    
+    printf("%.10lf\n", r + 1.0);
+
     return 0;
 }
