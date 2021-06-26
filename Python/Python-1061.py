@@ -1,1 +1,0 @@
-dia = int(input("Dia "))
